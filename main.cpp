@@ -133,6 +133,14 @@ public:
             cout << "0. Забрати решту та вийти\n";
             cout << "-> ";
             cin >> choice;
+            if (cin.fail())a {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "[Помилка] Невірне введення. Спробуйте ще раз.\n";
+                choice = -1;
+                continue;
+            }
+        
 
             if (choice == 10) {
                 double amount;
